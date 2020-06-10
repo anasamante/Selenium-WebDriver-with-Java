@@ -8,7 +8,6 @@ public class HomePage {
     // fields that represent elements and methods to interact with those elements
     // pass the webdriver that allows to interact with browser
     private WebDriver driver;
-    private By formAuthLink = By.linkText("Form Authentication");
 
     //constructor that pass the driver
     public HomePage(WebDriver driver) {
@@ -18,8 +17,16 @@ public class HomePage {
     //method that finds and click the link that is declared above
     //returns a login page since we are redirected
     public LoginPage clickFormAuth(){
-        driver.findElement(formAuthLink).click();
+        clickLink("Form Authentication");
         return new LoginPage(driver);//sends the open browser
+    }
+
+    public DropdownPage clickDropdown(){
+        clickLink("Dropdown");
+        return new DropdownPage(driver);
+    }
+    private void clickLink(String linkText){
+        driver.findElement(By.linkText(linkText)).click();
     }
 
 }

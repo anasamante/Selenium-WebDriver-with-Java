@@ -30,6 +30,12 @@ public class HomePage {
         clickLink("Forgot Password");
         return new ForgotPassPage(driver);
     }
+
+    public HoversPage clickHovers(){
+        clickLink("Hovers");
+        return new HoversPage(driver);
+    }
+
     private void clickLink(String linkText){
         driver.findElement(By.linkText(linkText)).click();
     }

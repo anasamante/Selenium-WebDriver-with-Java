@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-//login to the aplication from the-internet.herokuapp.com
+//login to the application from the-internet.herokuapp.com
 public class HomePage {
     // fields that represent elements and methods to interact with those elements
     // pass the webdriver that allows to interact with browser
@@ -24,6 +24,11 @@ public class HomePage {
     public DropdownPage clickDropdown(){
         clickLink("Dropdown");
         return new DropdownPage(driver);
+    }
+
+    public ForgotPassPage clickForgotPass(){
+        clickLink("Forgot Password");
+        return new ForgotPassPage(driver);
     }
     private void clickLink(String linkText){
         driver.findElement(By.linkText(linkText)).click();

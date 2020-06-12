@@ -9,7 +9,7 @@ public class SliderTests extends BaseTest {
 
     @Test
     public void testSlider(){
-        String value = "4";
+        String value = "1.5";
         var horizontalSliderPage = homePage.clickSlider();
         horizontalSliderPage.focusMoveSlider(value);
         assertEquals(horizontalSliderPage.getRange(), value, "ranges don't match");

@@ -16,8 +16,6 @@ public class HorizontalSliderPage {
 
 
     public void focusMoveSlider(String rangeValue) {
-        Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(slider)).perform();
         while (!getRange().equals(rangeValue)) {
             driver.findElement(slider).sendKeys(Keys.ARROW_RIGHT);
         }

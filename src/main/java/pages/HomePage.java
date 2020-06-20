@@ -36,10 +36,21 @@ public class HomePage {
         return new HoversPage(driver);
     }
 
+    public KeysPage clickKeyPage(){
+        clickLink("Key Presses");
+        return new KeysPage(driver);
+
+    }
+
     public HorizontalSliderPage clickSlider(){
         clickLink("Horizontal Slider");
         return new HorizontalSliderPage(driver);
 
+    }
+
+    public AlertsPage clickJavaScriptAlerts(){
+        clickLink("JavaScript Alerts");
+        return new AlertsPage(driver);
     }
 
     private void clickLink(String linkText){

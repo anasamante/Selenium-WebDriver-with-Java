@@ -73,7 +73,12 @@ public class HomePage {
         return new WYSIWYGEditorPage(driver);
     }
 
-    private void clickLink(String linkText){
+    public FramesPage clickFramesPage(){
+        clickLink("Frames");
+        return new FramesPage(driver);
+    }
+
+    protected void clickLink(String linkText){
         driver.findElement(By.linkText(linkText)).click();
     }
 

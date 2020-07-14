@@ -1,8 +1,9 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class FramesPage extends HomePage{
+public class FramesPage {
 
     private WebDriver driver;
 
@@ -10,11 +11,14 @@ public class FramesPage extends HomePage{
         this.driver = driver;
     }
 
-
     public NestedFramesPage clickNestedFramesLink(){
        clickLink("Nested Frames");
        return new NestedFramesPage(driver);
 
+    }
+
+    private void clickLink(String linkText){
+        driver.findElement(By.linkText(linkText)).click();
     }
 
 }

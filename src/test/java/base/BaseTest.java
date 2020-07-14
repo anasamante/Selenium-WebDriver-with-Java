@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
@@ -23,6 +24,11 @@ public class BaseTest {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         //webdriver is an interface and we are instantiating the chrome driver implementation
         driver = new ChromeDriver();
+        //any time WebDriver needs to interact with an element,
+        //  it should poll the website for up to 3 seconds until it finds that element
+        // If time's up and element was not found, it will throw a NoSuchElementException.
+        // This is at a project level, this will impact all interactions
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         goHome();
 
         // launch the browser

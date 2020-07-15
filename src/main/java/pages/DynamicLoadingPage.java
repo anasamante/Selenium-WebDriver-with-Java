@@ -16,6 +16,12 @@ public class DynamicLoadingPage {
 
     }
 
+    public Example2ElementRenderedPage clickExample2ElementRenderedLink(){
+        clickLink("Example 2: Element rendered after the fact");
+        return new Example2ElementRenderedPage(driver);
+
+    }
+
     private void clickLink(String linkText){
         driver.findElement(By.linkText(linkText)).click();
     }

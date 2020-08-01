@@ -83,6 +83,15 @@ public class HomePage {
         return new DynamicLoadingPage(driver);
     }
 
+    public LargeDeepDOMPage clickLargeDeepDOMPage(){
+        clickLink("Large & Deep DOM");
+        return new LargeDeepDOMPage(driver);
+    }
+
+    public InfiniteScrollPage clickInfiniteScrollPage(){
+        clickLink("Infinite Scroll");
+        return new InfiniteScrollPage(driver);
+    }
 
 
     private void clickLink(String linkText){

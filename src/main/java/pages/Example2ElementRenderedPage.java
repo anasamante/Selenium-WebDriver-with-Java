@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -10,6 +11,7 @@ public class Example2ElementRenderedPage {
     private WebDriver driver;
     private By startBtn = By.cssSelector("#start button");
     private By loadedText = By.cssSelector("div #finish");
+
 
     public Example2ElementRenderedPage(WebDriver driver) {
         this.driver = driver;
@@ -27,7 +29,10 @@ public class Example2ElementRenderedPage {
         return driver.findElement(loadedText).getText();
     }
 
-
+    public boolean isStartButtonDisplayed() {
+        return (driver.findElement(startBtn).isDisplayed());
+    }
 
 
 }
+

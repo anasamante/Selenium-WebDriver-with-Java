@@ -3,13 +3,13 @@ package alerts;
 import base.BaseTest;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertTrue;
 
 public class ModalTest extends BaseTest {
     @Test
-    public void testCloseModal(){
+    public void testCloseModal() {
         var modalPage = homePage.clickEntryAd();
         modalPage.modal_clickCloseBtn();
-        assertTrue(modalPage.isModalHidden(), "Modal is hidden");
+        assertTrue(modalPage.isModalHidden(), "Modal is not hidden");
     }
 }

@@ -11,13 +11,13 @@ public class FramesPage {
         this.driver = driver;
     }
 
-    public NestedFramesPage clickNestedFramesLink(){
-       clickLink("Nested Frames");
-       return new NestedFramesPage(driver);
+    public NestedFramesPage clickNestedFramesLink() {
+        clickLink("Nested Frames");
+        return new NestedFramesPage(driver);
 
     }
 
-    private void clickLink(String linkText){
+    private void clickLink(String linkText) {
         driver.findElement(By.linkText(linkText)).click();
     }
 

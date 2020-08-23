@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class NestedFramesPage {
     private WebDriver driver;
@@ -18,7 +17,7 @@ public class NestedFramesPage {
         this.driver = driver;
     }
 
-    public String leftFrame(){
+    public String leftFrame() {
         driver.switchTo().frame(topFrameName);
         driver.switchTo().frame(leftFrameName);
         String text = getTextFromFrame();
@@ -27,16 +26,14 @@ public class NestedFramesPage {
         return text;
     }
 
-    public String bottomFrame(){
+    public String bottomFrame() {
         driver.switchTo().frame(bottomFrameName);
         String text = getTextFromFrame();
         driver.switchTo().parentFrame();
         return text;
     }
 
-    public String getTextFromFrame(){
+    public String getTextFromFrame() {
         return driver.findElement(body).getText();
     }
-
-    
 }

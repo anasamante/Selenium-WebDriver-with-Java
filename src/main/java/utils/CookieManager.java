@@ -9,23 +9,23 @@ import java.util.Map;
 public class CookieManager {
     private WebDriver driver;
 
-    public CookieManager(WebDriver driver){
+    public CookieManager(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void deleteCookie(String string){
+    public void deleteCookie(String string) {
         var cookie = driver.manage().getCookieNamed(string);
         driver.manage().deleteCookie(cookie);
     }
 
-    private void setCookie(String name, String value){
+    private void setCookie(String name, String value) {
         Cookie cookie = new Cookie.Builder(name, value)
                 .domain("the-internet.herokuapp.com")
                 .build();
         driver.manage().addCookie(cookie);
     }
 
-    public Map<String, Cookie> getRemainingCookiesMap(){
+    public Map<String, Cookie> getRemainingCookiesMap() {
         var remainingCookies = driver.manage().getCookies();
 
         Map<String, Cookie> cookieMap = new HashMap<>();
@@ -36,7 +36,7 @@ public class CookieManager {
         return cookieMap;
     }
 
-    public boolean isCookiePresent(String cookieName){
+    public boolean isCookiePresent(String cookieName) {
         return driver.manage().getCookieNamed(cookieName) != null;
 
     }

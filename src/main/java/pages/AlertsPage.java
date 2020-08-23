@@ -15,33 +15,33 @@ public class AlertsPage {
         this.driver = driver;
     }
 
-    public void clickTriggerAlert(){
+    public void clickTriggerAlert() {
         driver.findElement(triggerJSAlert).click();
     }
 
-    public void clickTriggerConfirm(){
+    public void clickTriggerConfirm() {
         driver.findElement(triggerJSConfirm).click();
     }
 
-    public void clickTriggerPrompt(){
+    public void clickTriggerPrompt() {
         driver.findElement(triggerJSPrompt).click();
     }
 
-    public void alert_accept(){
+    public void alert_accept() {
         driver.switchTo().alert().accept();
     }
 
-    public void alert_dismiss(){
+    public void alert_dismiss() {
         driver.switchTo().alert().dismiss();
     }
 
-    public void alert_input(String text){
+    public void alert_input(String text) {
         driver.switchTo().alert().sendKeys(text);
         driver.switchTo().alert().accept();
     }
 
-    public String getResult(){
-       return driver.findElement(result).getText();
+    public String getResult() {
+        return driver.findElement(result).getText();
     }
 
 }

@@ -12,7 +12,7 @@ public class MultipleWindowsPage {
         this.driver = driver;
     }
 
-    public void clickHere(){
+    public void clickHere() {
         driver.findElement(clickHereLink).click();
     }
 }

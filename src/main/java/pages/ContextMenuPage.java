@@ -8,21 +8,20 @@ public class ContextMenuPage {
     private WebDriver driver;
     private By hotSpotBox = By.id("hot-spot");
 
-
     public ContextMenuPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void rightClickSpot(){
+    public void rightClickSpot() {
         Actions actions = new Actions(driver);
         actions.contextClick(driver.findElement(hotSpotBox)).perform();
     }
 
-    public String alert_getText(){
+    public String alert_getText() {
         return driver.switchTo().alert().getText();
     }
 
-    public void alert_closeAlert(){
+    public void alert_closeAlert() {
         driver.switchTo().alert().accept();
     }
 }

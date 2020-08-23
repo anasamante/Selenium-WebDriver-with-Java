@@ -12,16 +12,16 @@ public class InfiniteScrollPage {
         this.driver = driver;
     }
 
-    public void scrollToParagraph(int index){
+    public void scrollToParagraph(int index) {
         String script = "window.scrollTo(0, document.body.scrollHeight)";
-        var jsExecutor = (JavascriptExecutor)driver;
+        var jsExecutor = (JavascriptExecutor) driver;
 
-        while(getNumberOfParagraphsPresent() < index){
+        while (getNumberOfParagraphsPresent() < index) {
             jsExecutor.executeScript(script);
         }
     }
 
-    private int getNumberOfParagraphsPresent(){
+    private int getNumberOfParagraphsPresent() {
         return driver.findElements(textBlocks).size();
     }
 

@@ -11,7 +11,7 @@ import static org.testng.Assert.assertFalse;
 public class CookiesTests extends BaseTest {
 
     @Test
-    public void testDeleteCookie(){
+    public void testDeleteCookie() {
         var cookieManager = getCookieManager();
         var cookieToDelete = ("optimizelyBuckets");
         cookieManager.deleteCookie(cookieToDelete);

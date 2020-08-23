@@ -8,7 +8,7 @@ import static org.testng.Assert.assertEquals;
 public class EditorFrameTests extends BaseTest {
 
     @Test
-    public void testEditorFrame(){
+    public void testEditorFrame() {
         var iFramePage = homePage.clickWYSIWYGEditor();
         iFramePage.clearTextArea();
 
@@ -18,7 +18,7 @@ public class EditorFrameTests extends BaseTest {
         iFramePage.setTextArea(text1);
         iFramePage.clickIncreaseIndentBtn();
         iFramePage.setTextArea(text2);
-        assertEquals(iFramePage.getTextFromEditor(),text1 + text2, "Incorrect text on editor");
+        assertEquals(iFramePage.getTextFromEditor(), text1 + text2, "Incorrect text on editor");
 
     }
 }

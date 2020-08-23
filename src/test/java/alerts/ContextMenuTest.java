@@ -8,7 +8,7 @@ import static org.testng.Assert.*;
 public class ContextMenuTest extends BaseTest {
 
     @Test
-    public void testContextMenu(){
+    public void testContextMenu() {
         var contextMenuPage = homePage.clickContextMenu();
         contextMenuPage.rightClickSpot();
         String alert_message = contextMenuPage.alert_getText();

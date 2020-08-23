@@ -38,7 +38,7 @@ public class BaseTest {
     }
 
     @BeforeMethod
-    public void goHome(){
+    public void goHome() {
         driver.get("https://the-internet.herokuapp.com/");
         driver.manage().window().maximize();
         homePage = new HomePage(driver);
@@ -51,23 +51,23 @@ public class BaseTest {
     }
 
     @AfterMethod
-    public void takeScreenshotOnFailure(ITestResult result){
-        if (ITestResult.FAILURE == result.getStatus()){
-        var camera = (TakesScreenshot)driver;
-        File screenshot = camera.getScreenshotAs(OutputType.FILE);
-        try {
-            Files.move(screenshot, new File("resources/screenshots/" + result.getName() + ".png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void takeScreenshotOnFailure(ITestResult result) {
+        if (ITestResult.FAILURE == result.getStatus()) {
+            var camera = (TakesScreenshot) driver;
+            File screenshot = camera.getScreenshotAs(OutputType.FILE);
+            try {
+                Files.move(screenshot, new File("resources/screenshots/" + result.getName() + ".png"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    public WindowManager getWindowManager(){
+    public WindowManager getWindowManager() {
         return new WindowManager(driver);
     }
 
-    private ChromeOptions getChromeOptions(){
+    private ChromeOptions getChromeOptions() {
         ChromeOptions options = new ChromeOptions();
         //disable info bar
 
@@ -76,7 +76,7 @@ public class BaseTest {
         return options;
     }
 
-    public CookieManager getCookieManager(){
+    public CookieManager getCookieManager() {
         return new CookieManager(driver);
     }
 

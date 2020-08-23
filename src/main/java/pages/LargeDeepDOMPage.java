@@ -14,9 +14,9 @@ public class LargeDeepDOMPage {
         this.driver = driver;
     }
 
-    public void scrollToTable(){
+    public void scrollToTable() {
         WebElement tableElement = driver.findElement(table);
         String script = "arguments[0].scrollIntoView();";
-        ((JavascriptExecutor)driver).executeScript(script, tableElement);
+        ((JavascriptExecutor) driver).executeScript(script, tableElement);
     }
 }

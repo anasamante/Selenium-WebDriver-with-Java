@@ -10,7 +10,7 @@ import static org.testng.Assert.assertTrue;
 public class ForgotPasswordTest extends BaseTest {
 
     @Test
-    public void testRetrievePassword(){
+    public void testRetrievePassword() {
         ForgotPassPage forgotPassPage = homePage.clickForgotPass();
         forgotPassPage.setEmail("tau@example.com");
         EmailSentPage emailSentPage = forgotPassPage.clickRetrievePassBtn();

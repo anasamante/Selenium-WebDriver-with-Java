@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
@@ -18,24 +17,22 @@ public class DropdownPage {
         this.driver = driver;
     }
 
-    public void selectFromDropdown(String option){
+    public void selectFromDropdown(String option) {
         findDropdownElement().selectByVisibleText(option);
     }
 
-    public List<String> getSelectedOptions(){
+    public List<String> getSelectedOptions() {
         List<WebElement> selectedElements = findDropdownElement().getAllSelectedOptions();
-        return selectedElements.stream().map(e->e.getText()).collect(Collectors.toList());
+        return selectedElements.stream().map(e -> e.getText()).collect(Collectors.toList());
     }
 
-    public void setDropdownToMultiple(){
+    public void setDropdownToMultiple() {
         String script = "arguments[0].setAttribute('multiple', '');";
-        ((JavascriptExecutor)driver).executeScript(script, findDropdownElement());
+        ((JavascriptExecutor) driver).executeScript(script, findDropdownElement());
     }
 
-
-    private Select findDropdownElement(){
+    private Select findDropdownElement() {
         return new Select(driver.findElement(dropdown));
     }
 
-    
 }

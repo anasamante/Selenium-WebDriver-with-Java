@@ -13,6 +13,6 @@ public class KeysTest extends BaseTest {
     public void testBackspace() {
         KeysPage keysPage = homePage.clickKeyPage();
         keysPage.enterText("A" + Keys.BACK_SPACE);
-        assertEquals(keysPage.getResult(), "You entered: A", "Incorrect key");
+        assertEquals(keysPage.getResult(), "You entered: BACK_SPACE", "Incorrect key");
     }
 }

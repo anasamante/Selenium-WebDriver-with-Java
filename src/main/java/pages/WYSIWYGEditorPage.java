@@ -14,30 +14,31 @@ public class WYSIWYGEditorPage {
         this.driver = driver;
     }
 
-    private void switchToEditArea(){
+    private void switchToEditArea() {
         driver.switchTo().frame(editorFrame);
     }
 
-    private void switchToMainArea(){
+    private void switchToMainArea() {
         driver.switchTo().parentFrame();
     }
 
-    public void clearTextArea(){
+    public void clearTextArea() {
         switchToEditArea();
         driver.findElement(textArea).clear();
         switchToMainArea();
     }
-    public void setTextArea(String text){
+
+    public void setTextArea(String text) {
         switchToEditArea();
         driver.findElement(textArea).sendKeys(text);
         switchToMainArea();
     }
 
-    public void clickIncreaseIndentBtn(){
+    public void clickIncreaseIndentBtn() {
         driver.findElement(increaseIndentBtn).click();
     }
 
-    public String getTextFromEditor(){
+    public String getTextFromEditor() {
         switchToEditArea();
         String text = driver.findElement(textArea).getText();
         switchToMainArea();

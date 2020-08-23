@@ -11,37 +11,38 @@ public class WindowManager {
         navigate = driver.navigate();
     }
 
-    public void goBack(){
+    public void goBack() {
         navigate.back();
     }
 
-    public void goForward(){
+    public void goForward() {
         navigate.forward();
     }
 
-    public void refresh(){
+    public void refresh() {
         navigate.refresh();
     }
 
-    public void goToURL(String url){
+    public void goToURL(String url) {
         navigate.to(url);
     }
 
-    public void switchToTab(String tabTitle){
+    public void switchToTab(String tabTitle) {
         var windows = driver.getWindowHandles();
 
         System.out.println("number of windows: " + windows.size());
 
-        for (String window : windows){
+        for (String window : windows) {
             driver.switchTo().window(window);
-            System.out.println("window title: "+ driver.getTitle());
+            System.out.println("window title: " + driver.getTitle());
 
-            if (tabTitle.equals(driver.getTitle())){
+            if (tabTitle.equals(driver.getTitle())) {
                 break;
             }
         }
     }
-    public void switchToNewTab(){
+
+    public void switchToNewTab() {
         var windows = driver.getWindowHandles();
         windows.forEach(driver.switchTo()::window);
 

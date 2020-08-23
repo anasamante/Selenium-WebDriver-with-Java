@@ -14,20 +14,17 @@ public class FileUploadPage {
         this.driver = driver;
     }
 
-    public void uploadFile(String fileAbsolutePath){
+    public void uploadFile(String fileAbsolutePath) {
         driver.findElement(inputField).sendKeys(fileAbsolutePath);
         clickUploadBtn();
     }
 
-    public void clickUploadBtn(){
+    public void clickUploadBtn() {
         driver.findElement(uploadBtn).click();
     }
 
-    public String getUploadedFileText(){
+    public String getUploadedFileText() {
         return driver.findElement(uploadedFile).getText();
     }
-
-
-
 
 }

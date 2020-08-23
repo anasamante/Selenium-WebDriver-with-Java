@@ -16,7 +16,7 @@ public class Example1ElementHiddenPage {
         this.driver = driver;
     }
 
-    public void clickStartBtn(){
+    public void clickStartBtn() {
         driver.findElement(startBtn).click();
         //explicit wait. this is only for this specific method
         WebDriverWait wait = new WebDriverWait(driver, 5);
@@ -24,11 +24,8 @@ public class Example1ElementHiddenPage {
         wait.until(ExpectedConditions.invisibilityOf(driver.findElement(loadingIndicator)));
     }
 
-    public String getLoadedText(){
+    public String getLoadedText() {
         return driver.findElement(loadedText).getText();
     }
-
-
-
 
 }

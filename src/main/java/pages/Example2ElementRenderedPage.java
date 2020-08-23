@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,7 +16,7 @@ public class Example2ElementRenderedPage {
         this.driver = driver;
     }
 
-    public void clickStartBtn(){
+    public void clickStartBtn() {
         driver.findElement(startBtn).click();
         //explicit wait. this is only for this specific method
         WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -25,14 +24,13 @@ public class Example2ElementRenderedPage {
         wait.until(ExpectedConditions.presenceOfElementLocated(loadedText));
     }
 
-    public String getLoadedText(){
+    public String getLoadedText() {
         return driver.findElement(loadedText).getText();
     }
 
     public boolean isStartButtonDisplayed() {
         return (driver.findElement(startBtn).isDisplayed());
     }
-
 
 }
 

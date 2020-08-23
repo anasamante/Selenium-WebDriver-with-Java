@@ -8,7 +8,7 @@ import static org.testng.Assert.assertEquals;
 public class SliderTests extends BaseTest {
 
     @Test
-    public void testSlider(){
+    public void testSlider() {
         String value = "1.5";
         var horizontalSliderPage = homePage.clickSlider();
         horizontalSliderPage.focusMoveSlider(value);

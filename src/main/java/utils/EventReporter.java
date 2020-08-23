@@ -10,7 +10,6 @@ public class EventReporter implements WebDriverEventListener {
     @Override
     public void beforeAlertAccept(WebDriver driver) {
         System.out.println("Clicking on accept alert");
-
     }
 
     @Override

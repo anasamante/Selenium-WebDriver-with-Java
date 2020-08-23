@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+
 //login to the application from the-internet.herokuapp.com
 public class HomePage {
     // fields that represent elements and methods to interact with those elements
@@ -97,6 +98,7 @@ public class HomePage {
         clickLink("Multiple Windows");
         return new MultipleWindowsPage(driver);
     }
+
 
 
     private void clickLink(String linkText){
